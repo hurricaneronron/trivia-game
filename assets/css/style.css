@@ -21,6 +21,10 @@ body {
   line-height: 300%;
 }
 
+.game-title {
+  border-bottom: 3px solid black;
+}
+
 .question,
 .answer-choices {
   font-family: 'BioRhyme', serif;
