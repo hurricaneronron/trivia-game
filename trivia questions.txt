@@ -4,7 +4,7 @@ Albus Patrick William Bob Dumbledore
 Albus Brian Percival Wulfric Dumbledore
 Albus William Bob Patrick Dumbledore
 
-dumbledore gif - check
+dumbledore gif
 
 
 
@@ -14,7 +14,7 @@ Harry Potter and James Potter
 Severus Snape and Lily Potter
 Dean Thomas and Ginny Weasley
 
-patronus gif - check
+patronus gif
 
 
 
@@ -24,34 +24,34 @@ When Harry and Ron visit the Slytherin common room in disguise in The Chamber of
 "Parselmouth"
 "Draco dormiens nunquam titillandus"
 
-polyjuice gif - check
+polyjuice gif
 
 
 
 James Potter, Sirius Black, and Peter Pettigrew are the only known unregistered Animagi - until who comes along?
-Aberforth Dumbledore
-Rita Skeeter
-Nymphadora Tonks
-Ludo Bagman
+answer1 : "Aberforth Dumbledore",
+rightAns : "Rita Skeeter",
+answer2 : "Nymphadora Tonks",
+answer3 : "Ludo Bagman",
 
-rita skeeter gif - check
-
-
-
-In The Prisoner of Azkaban, which secret passage out of Hogwarts leads Harry to the cellar of Honeydukes?
-Behind the statue of the one-eyed witch
-Behind the statue of Gregory the Smarmy
-Inside the Vanishing Cabinet
-Beneath the Whomping Willow
-
-maurader's map gif - check
+rita skeeter gif
 
 
 
-In The Deathly Hallows, what are the names of the three Peverell brothers?
-Antioch, Cadmus, and Ignotus
-Antioch, Crydia, and Ignatius
-Aberforth, Cadmus, and Ignotus
-Antioch, Cadmus, and Ibrahim
+question : "In The Prisoner of Azkaban, which secret passage out of Hogwarts leads Harry to the cellar of Honeydukes?",
+rightAns : "Behind the statue of the one-eyed witch",
+answer1 : "Behind the statue of Gregory the Smarmy",
+answer2 : "Inside the Vanishing Cabinet",
+answer3 : "Beneath the Whomping Willow",
 
-deathly hallows gif - check
+maurader's map gif
+
+
+
+question : "In The Deathly Hallows, what are the names of the three Peverell brothers?",
+rightAns : "Antioch, Cadmus, and Ignotus",
+answer1 : "Antioch, Crydia, and Ignatius",
+answer2 : "Aberforth, Cadmus, and Ignotus",
+answer3 : "Antioch, Cadmus, and Ibrahim",
+
+deathly hallows gif
