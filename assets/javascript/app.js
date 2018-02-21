@@ -60,6 +60,8 @@ var questions = [
 var questionNum = -1
 var questionsCorrect = 0
 var questionsIncorrect = 0
+var clock = 30
+var unanswered = 6
 
 // load page and begin game
 function gameStart( ) {
@@ -70,8 +72,18 @@ gameStart ( )
 
 $(".begin").on("click", function ( ) {
   $(".begin").hide()
-  // $(".begin").off()
+  $(".begin").off()
   // display timer
+  var timer = setInterval(function ( ) {
+    $(".timer").html("Time Remaining: "+clock+" seconds")
+    if( clock > 0 ) {
+      clock--;
+    }
+    if( clock === 0 ) {
+      $(".question").empty( )
+      $(".answer-choices").html("<h3>Time's Up!</h3><h4>Correct Answers: "+questionsCorrect+"</h4><h4>Incorrect Answers: "+questionsIncorrect+"</h4><h4>Unanswered Questions: "+unanswered+"</h4><p><button type='button' class='btn btn-secondary btn-lg begin'>Try Again</button><p>")
+    }
+  }, 1000)
   gamePlay( )
 
   // game play
@@ -83,6 +95,7 @@ $(".begin").on("click", function ( ) {
     $(".answer-choices").append("<p>"+questions[questionNum].C+"</p>")
     $(".answer-choices").append("<p>"+questions[questionNum].D+"</p>")
     $(".correct").on("click", function ( ){
+      unanswered--
       questionsCorrect++
       $(".question").html("Correct!")
       $(".answer-choices").html(questions[questionNum].gif)
@@ -95,9 +108,10 @@ $(".begin").on("click", function ( ) {
         else {
           gamePlay( )
         }
-      }, 2000)
+      }, 4000)
     })
     $(".incorrect").on("click", function ( ){
+      unanswered--
       questionsIncorrect++
       $(".question").html("Incorrect. The correct answer is: "+$(".correct").text( )+"")
       $(".answer-choices").html(questions[questionNum].gif)
@@ -110,7 +124,7 @@ $(".begin").on("click", function ( ) {
         else {
           gamePlay( )
         }
-      }, 2000)
+      }, 4000)
     })
     
   }

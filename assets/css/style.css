@@ -15,8 +15,7 @@ body {
   margin-left: auto;
 }
 
-.game-title,
-.timer {
+.game-title {
   font-family: 'BioRhyme Expanded', serif;
   line-height: 300%;
 }
@@ -27,7 +26,9 @@ body {
 
 .question,
 .answer-choices,
-.correct {
+.correct,
+.incorrect,
+.timer {
   font-family: 'BioRhyme', serif;
   line-height: 250%;
 }
