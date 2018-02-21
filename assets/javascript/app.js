@@ -60,28 +60,43 @@ var questions = [
 var questionNum = -1
 var questionsCorrect = 0
 var questionsIncorrect = 0
-var clock = 30
+var clock = 2
 var unanswered = 6
 
 // load page and begin game
 function gameStart( ) {
+  questionNum = -1
+  questionsCorrect = 0
+  questionsIncorrect = 0
+  clock = 5
+  unanswered = 6
+  $(".timer").empty( )
+  $(".question").removeClass("active")
   $(".question").html("Test your Harry Potter knowledge!")
   $(".answer-choices").html("<button type='button' class='btn btn-secondary btn-lg begin'>Begin</button>")
+  $(".begin").on( )
 }
 gameStart ( )
 
 $(".begin").on("click", function ( ) {
-  $(".begin").hide()
+  console.log("begin")
+  $(".begin").hide( )
+
   // display timer
   var timer = setInterval(function ( ) {
-    if( $(".question").hasClass("active")) {
+    if($(".question").hasClass("active")) {
     $(".timer").html("Time Remaining: "+clock+" seconds")
     if( clock > 0 ) {
       clock--;
     }
     if( clock === 0 ) {
       $(".question").empty( )
-      $(".answer-choices").html("<h2>Time's Up!</h2><h4>Correct Answers: "+questionsCorrect+"</h4><h4>Incorrect Answers: "+questionsIncorrect+"</h4><h4>Unanswered Questions: "+unanswered+"</h4><p><button type='button' class='btn btn-secondary btn-lg begin'>Try Again</button><p>")
+      $(".answer-choices").html("<h2>Time's Up!</h2><h4>Correct Answers: "+questionsCorrect+"</h4><h4>Incorrect Answers: "+questionsIncorrect+"</h4><h4>Unanswered Questions: "+unanswered+"</h4><p><button type='button' class='btn btn-secondary btn-lg restart'>Try Again</button><p>")
+      // restart game
+      $(".restart").on("click", function ( ) {
+        gameStart( )
+        console.log("clicked")
+      })
     }
   }
   }, 1000)
@@ -106,7 +121,11 @@ $(".begin").on("click", function ( ) {
         $(".answer-choices").empty( )
         if(questionNum === questions.length-1) {
           $(".question").empty( )
-          $(".answer-choices").html("<h3>End of Game</h3><h4>Correct Answers: "+questionsCorrect+"</h4><h4>Incorrect Answers: "+questionsIncorrect+"</h4><p><button type='button' class='btn btn-secondary btn-lg begin'>Try Again</button><p>")
+          $(".answer-choices").html("<h3>End of Game</h3><h4>Correct Answers: "+questionsCorrect+"</h4><h4>Incorrect Answers: "+questionsIncorrect+"</h4><p><button type='button' class='btn btn-secondary btn-lg restart'>Try Again</button><p>")
+          $(".restart").on("click", function ( ) {
+            gameStart( )
+            console.log("clicked")
+          })
         }
         else {
           gamePlay( )
@@ -123,14 +142,20 @@ $(".begin").on("click", function ( ) {
         $(".answer-choices").empty( )
         if(questionNum === questions.length-1) {
           $(".question").empty( )
-          $(".answer-choices").html("<h3>End of Game</h3><h4>Correct Answers: "+questionsCorrect+"</h4><h4>Incorrect Answers: "+questionsIncorrect+"</h4><p><button type='button' class='btn btn-secondary btn-lg begin'>Try Again</button><p>")
+          $(".answer-choices").html("<h3>End of Game</h3><h4>Correct Answers: "+questionsCorrect+"</h4><h4>Incorrect Answers: "+questionsIncorrect+"</h4><p><button type='button' class='btn btn-secondary btn-lg restart'>Try Again</button><p>")
+          // restart game
+          $(".restart").on("click", function ( ) {
+            gameStart( )
+            console.log("clicked")
+          })
         }
         else {
           gamePlay( )
         }
       }, 5000)
     })
-    
   }
 })
+
+
 })
