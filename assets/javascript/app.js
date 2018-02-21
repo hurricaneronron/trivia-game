@@ -72,17 +72,18 @@ gameStart ( )
 
 $(".begin").on("click", function ( ) {
   $(".begin").hide()
-  $(".begin").off()
   // display timer
   var timer = setInterval(function ( ) {
+    if( $(".question").hasClass("active")) {
     $(".timer").html("Time Remaining: "+clock+" seconds")
     if( clock > 0 ) {
       clock--;
     }
     if( clock === 0 ) {
       $(".question").empty( )
-      $(".answer-choices").html("<h3>Time's Up!</h3><h4>Correct Answers: "+questionsCorrect+"</h4><h4>Incorrect Answers: "+questionsIncorrect+"</h4><h4>Unanswered Questions: "+unanswered+"</h4><p><button type='button' class='btn btn-secondary btn-lg begin'>Try Again</button><p>")
+      $(".answer-choices").html("<h2>Time's Up!</h2><h4>Correct Answers: "+questionsCorrect+"</h4><h4>Incorrect Answers: "+questionsIncorrect+"</h4><h4>Unanswered Questions: "+unanswered+"</h4><p><button type='button' class='btn btn-secondary btn-lg begin'>Try Again</button><p>")
     }
+  }
   }, 1000)
   gamePlay( )
 
@@ -90,16 +91,18 @@ $(".begin").on("click", function ( ) {
   function gamePlay( ) {
     questionNum++
     $(".question").html(questions[questionNum].question)
+    $(".question").addClass("active")
     $(".answer-choices").append("<p>"+questions[questionNum].A+"</p>")
     $(".answer-choices").append("<p>"+questions[questionNum].B+"</p>")
     $(".answer-choices").append("<p>"+questions[questionNum].C+"</p>")
     $(".answer-choices").append("<p>"+questions[questionNum].D+"</p>")
     $(".correct").on("click", function ( ){
+      $(".question").removeClass("active")
       unanswered--
       questionsCorrect++
       $(".question").html("Correct!")
       $(".answer-choices").html(questions[questionNum].gif)
-      var wait = setTimeout( function( ){
+      var wait = setTimeout( function ( ) {
         $(".answer-choices").empty( )
         if(questionNum === questions.length-1) {
           $(".question").empty( )
@@ -108,14 +111,15 @@ $(".begin").on("click", function ( ) {
         else {
           gamePlay( )
         }
-      }, 4000)
+      }, 5000)
     })
     $(".incorrect").on("click", function ( ){
+      $(".question").removeClass("active")
       unanswered--
       questionsIncorrect++
-      $(".question").html("Incorrect. The correct answer is: "+$(".correct").text( )+"")
+      $(".question").html("Incorrect. The correct answer is: <p>"+$(".correct").text( )+"</p>")
       $(".answer-choices").html(questions[questionNum].gif)
-      var wait = setTimeout( function( ){
+      var wait = setTimeout( function ( ) {
         $(".answer-choices").empty( )
         if(questionNum === questions.length-1) {
           $(".question").empty( )
@@ -124,7 +128,7 @@ $(".begin").on("click", function ( ) {
         else {
           gamePlay( )
         }
-      }, 4000)
+      }, 5000)
     })
     
   }
