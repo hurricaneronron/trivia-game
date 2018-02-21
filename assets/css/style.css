@@ -26,7 +26,13 @@ body {
 }
 
 .question,
-.answer-choices {
+.answer-choices,
+.correct {
   font-family: 'BioRhyme', serif;
   line-height: 250%;
 }
+
+/* .correct {
+  border: none;
+  background: none;
+} */
