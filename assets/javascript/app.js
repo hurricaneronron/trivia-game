@@ -71,7 +71,7 @@ function gameStart( ) {
 gameStart ( )
 
 $(".begin").on("click", function ( ) {
-  console.log("begin")
+  // $(".theme").play( )
   $(".begin").hide( )
   // display timer
   var timer = setInterval(function ( ) {
@@ -156,7 +156,6 @@ $(".begin").on("click", function ( ) {
     $(".question").html("Test your Harry Potter knowledge!")
     $(".answer-choices").html("<button type='button' class='btn btn-secondary btn-lg begin'>Begin</button>")
     $(".begin").on("click", function ( ) {
-      console.log("begin")
       $(".begin").hide( )
       gamePlay( )
     })

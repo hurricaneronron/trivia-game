@@ -24,7 +24,6 @@ body {
   border-bottom: 3px solid black;
 }
 
-.question,
 .answer-choices,
 .correct,
 .incorrect,
@@ -33,7 +32,7 @@ body {
   line-height: 250%;
 }
 
-/* .correct {
-  border: none;
-  background: none;
-} */
+.question {
+  font-family: 'BioRhyme', serif;
+  line-height: 150%;
+}
