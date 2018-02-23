@@ -63,15 +63,21 @@ var questionsIncorrect = 0
 var clock = 30
 var unanswered = 6
 
+var music = document.getElementById("theme")
+
 // load page and begin game
 function gameStart( ) {
   $(".question").html("Test your Harry Potter knowledge!")
   $(".answer-choices").html("<button type='button' class='btn btn-secondary btn-lg begin'>Begin</button>")
 }
 gameStart ( )
+// play theme song
+function playMusic( ) {
+  music.play( )
+}
+playMusic( )
 
 $(".begin").on("click", function ( ) {
-  // $(".theme").play( )
   $(".begin").hide( )
   // display timer
   var timer = setInterval(function ( ) {
